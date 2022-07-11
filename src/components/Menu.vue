@@ -1,14 +1,14 @@
 <template>
     <div class="menu">
         <div class="menu-item" v-for="(item, index) in items" :key="index" :class="{'active':items[index].isActive}"
-        :style="{backgroundImage: 'linear-gradient(to right, rgba(18, 18, 18, 0), rgba(18, 18, 18, 1)), url('+ items[index].backgroudImg +')'}"
+        :style="{backgroundImage: 'linear-gradient(to right, rgba(18, 18, 18, 0), rgba(18, 18, 18, 1)), url('+ items[index].info.backgroudImg +')'}"
         @mouseover="handleMouseOver(index)">
             <div class="text">
-                {{items[index].text}}
+                {{items[index].info.text}}
             </div>
             <transition name="word-trans">
                 <div class="word" v-show="items[index].isActive">
-                    {{items[index].word}}
+                    {{items[index].info.word}}
                 </div>
             </transition>
         </div>
@@ -16,51 +16,81 @@
 </template>
 
 <script>
+import { reactive, markRaw } from 'vue'
+import { useRouter } from 'vue-router'
+
 export default {
-    data() {
-        return {
-            items: [
-                {
+    setup() {
+        let router = useRouter()
+
+        let items = reactive({
+            item1 : {
+                info : markRaw({
                     name: "career",
                     text: "Professional \n Career",
                     word: "前路依然遥远",
                     backgroudImg: require('../assets/career.jpg'),
                     target: "CareerPage",
-                    isActive: true
-                },
-                {
+                }),
+                isActive: true
+            },
+            item2 : {
+                info : markRaw({
                     name: "note",
                     text: "Informal \n Essay",
                     word: "最重要的小事",
                     backgroudImg: require('../assets/note.jpg'),
                     target: "NotePage",
-                    isActive: false
-                },
-                {
+                }),
+                isActive: false
+            },
+            item3 : {
+                info : markRaw({
                     name: "tech",
                     text: "Technology \n Science",
                     word: "软核技术分享",
                     backgroudImg: require('../assets/tech.jpg'),
                     target: "TechPage",
-                    isActive: false
-                },
-                {
+                }),
+                isActive: false
+            },
+            item4 : {
+                info : markRaw({
                     name: "music",
                     text: "Live & Life, \n Music",
                     word: "只有音乐才是解药",
                     backgroudImg: require('../assets/music.jpg'),
                     target: "MusicPage",
-                    isActive: false
-                },
-                {
+                }),
+                isActive: false
+            },
+            item5 : {
+                info : markRaw({
                     name: "sharing",
                     text: "Sharing \n Love",
                     word: "促膝长谈，畅聊一切",
                     backgroudImg: require('../assets/sharing.jpg'),
                     target: "SharingPage",
-                    isActive: false
-                },
-            ]
+                }),
+                isActive: false
+            },
+        })
+
+        function handleMouseOver(index) {
+            for (var key in items) {
+                items[key].isActive = false
+            }
+
+            items[index].isActive = true
+
+            if (!this.isDemo) {
+                router.replace({ name:this.items[index].info.target })
+            }
+        }
+
+        return {
+            items,
+            handleMouseOver
         }
     },
     props: {
@@ -68,20 +98,7 @@ export default {
             type: Boolean,
             default: false
         }
-    },
-    methods: {
-        handleMouseOver(index) {
-            for (let i = 0; i < this.items.length; i++) {
-                this.items[i].isActive = false
-            }
-
-            this.items[index].isActive = true
-
-            if (!this.isDemo) {
-                this.$router.replace({name:this.items[index].target})
-            }
-        }
-    },
+    }
 }
 </script>
 

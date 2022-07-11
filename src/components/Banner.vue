@@ -10,9 +10,11 @@
 </template>
 
 <script>
+import { onMounted, reactive, toRefs } from 'vue';
+
 export default {
-    data() {
-        return {
+    setup() {
+        let data = reactive({
             title: {
                 text: "Hi There,"
             },
@@ -20,17 +22,22 @@ export default {
                 text: "To find the absolute in your life.",
                 show: false
             }
-        }
-    },
-    methods: {
-        startUp() {
+        })
+
+        function startUp() {
             setTimeout(() => {
-                this.myWord.show = true
+                data.myWord.show = true
             }, 1000);
         }
-    },
-    mounted() {
-        this.startUp()
+
+        onMounted(()=>{
+            startUp()
+        })
+
+        return {
+            ...toRefs(data),
+            startUp
+        }
     }
 }
 </script>
