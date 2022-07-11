@@ -1,18 +1,31 @@
 const { defineConfig } = require('@vue/cli-service')
-const AutoImport = require('unplugin-auto-import/webpack')
-const Components = require('unplugin-vue-components/webpack')
-const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 
 module.exports = defineConfig({
   transpileDependencies: true,
   lintOnSave: false,
   publicPath:'./',
-  chainWebpack: (config) => {
-    config
-      .plugin('AutoImport')
-      .use(AutoImport({ resolvers: [ElementPlusResolver()] }))
-    config
-      .plugin('Components')
-      .use(Components({ resolvers: [ElementPlusResolver()] }))
+  configureWebpack: {
+    module: {
+      rules: [
+        {
+          test: /\.ts$/,
+          exclude: /node_modules/,
+          enforce: 'pre',
+          loader: 'tslint-loader',
+        },
+        {
+          test: /\.tsx?$/,
+          loader: 'ts-loader',
+          exclude: /node_modules/,
+          options: {
+            appendTsSuffixTo: [/\.vue$/],
+            transpileOnly: true
+          }
+        }
+      ]
+    },
+    resolve: {
+      extensions: ["*", ".js", ".jsx", ".vue", ".ts", ".tsx"]
+    }
   }
 })

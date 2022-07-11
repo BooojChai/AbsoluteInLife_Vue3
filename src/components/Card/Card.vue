@@ -14,7 +14,7 @@
 <script>
 import CardTitle from "./CardTitle.vue"
 import CardFooter from "./CardFooter.vue"
-import collapseTransition from "../../plugin/collapse"
+import CollapseTransition from "../collapse-transition"
 
 export default {
     data() {
@@ -50,7 +50,7 @@ export default {
     components: {
         CardTitle,
         CardFooter,
-        collapseTransition
+        CollapseTransition
     },
     methods: {
         navigateToArticle(where) {
