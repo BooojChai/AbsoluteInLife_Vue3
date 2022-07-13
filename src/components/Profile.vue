@@ -2,14 +2,14 @@
     <div class="profile">
         <img src="../assets/avatar.jpg" alt="">
 
-        <div class="name">{{name}}</div>
+        <div class="name">{{ name }}</div>
 
-        <div class="sign">{{sign}}</div>
+        <div class="sign">{{ sign }}</div>
 
         <div class="aboutme title" @click="$router.push('./Article-01')">About Me</div>
 
         <div class="content">
-            <li v-for="(item, index) in prop" :key="index">{{prop[index]}}</li>
+            <li v-for="(item, index) in prop" :key="index">{{ prop[index] }}</li>
         </div>
 
         <div class="findme title">Find Me Here</div>
@@ -17,7 +17,7 @@
         <div class="content">
             <div v-for="(item, index) in findme" :key="index">
                 <span :class="findme[index].iconClass"></span>
-                <span><a :href="findme[index].url" target="_blank">{{findme[index].text}}</a></span>
+                <span><a :href="findme[index].url" target="_blank">{{ findme[index].text }}</a></span>
             </div>
         </div>
 
@@ -26,15 +26,16 @@
         </div>
 
         <div class="content">
-            <span v-for="(item, index) in friends" :key="index"><a :href="friends[index].url" target="_blank">{{friends[index].name}}</a></span>
+            <span v-for="(item, index) in friends" :key="index"><a :href="friends[index].url"
+                    target="_blank">{{ friends[index].name }}</a></span>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
+    setup() {
+        let data = {
             name: "Bojun Chai",
             sign: "即使缓慢，但步履不停。",
             prop: ["正在奔三的微软工程师", "业余吉他手/鼓手/贝斯手/唱作人",
@@ -92,54 +93,59 @@ export default {
                 }
             ]
         }
-    },
+
+        return {
+            ...(data)
+        }
+    }
 }
 </script>
 
 <style lang="less" scoped>
-    .profile {
-        width: 300px;
-        padding-top: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+.profile {
+    width: 300px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-        img {
-            margin-top: 10px;
-            width: 200px;
-            height: 200px;
-            border-radius: 10px;
-        }
+    img {
+        margin-top: 10px;
+        width: 200px;
+        height: 200px;
+        border-radius: 10px;
+    }
 
-        .name {
-            font-size: 28px;
-            color: #AFAFAF;
-            margin-top: 10px;
-        }
+    .name {
+        font-size: 28px;
+        color: #AFAFAF;
+        margin-top: 10px;
+    }
 
-        .title {
-            margin-top: 15px;
-            font-size: 20px;
-            line-height: 40px;
-            width: 100%;
-            border-top: 1px solid;
-            border-image: linear-gradient(to right, rgba(66,66,66,.9), rgba(66,66,66,.1)) 1;
-        }
+    .title {
+        margin-top: 15px;
+        font-size: 20px;
+        line-height: 40px;
+        width: 100%;
+        border-top: 1px solid;
+        border-image: linear-gradient(to right, rgba(66, 66, 66, .9), rgba(66, 66, 66, .1)) 1;
+    }
 
-        .title:hover {
-            color: #B7452f;;
-        }
+    .title:hover {
+        color: #B7452f;
+        ;
+    }
 
-        .content {
-            width: 100%;
+    .content {
+        width: 100%;
 
-            span {
-                margin-right: 15px;
-            }
-        }
-
-        .content a:hover {
-            color: #B7452f;
+        span {
+            margin-right: 15px;
         }
     }
+
+    .content a:hover {
+        color: #B7452f;
+    }
+}
 </style>
