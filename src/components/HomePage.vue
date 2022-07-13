@@ -31,14 +31,13 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.homepage .main {
+.main {
     display: flex;
     margin-top: 10px;
     margin-bottom: 30px;
 
     .core-content {
         flex: 1;
-        margin-left: 20px;
 
         .cards {
             margin-top: 20px;

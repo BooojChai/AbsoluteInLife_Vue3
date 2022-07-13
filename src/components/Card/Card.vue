@@ -16,10 +16,46 @@ import CardTitle from "./CardTitle.vue"
 import CardFooter from "./CardFooter.vue"
 import CollapseTransition from "../collapse-transition"
 
+import { ref, onBeforeMount, onMounted, onUnmounted } from 'vue'
+import { useRouter } from 'vue-router'
+import eventbus from '../../plugin/eventbus';
+
 export default {
-    data() {
+    setup(props) {
+        let isActive = ref(false)
+        let router = useRouter()
+
+        function navigateToArticle(where) {
+            console.log("navigateToArticle " + where)
+            router.push({name:where})
+        }
+
+        function handleMouse() {
+            eventbus.emit('switchCard', props.cardName)
+        }
+
+        onBeforeMount(()=> {
+            isActive.value = props.isDefaultActive
+        })
+
+        onMounted(()=> {
+            eventbus.on('switchCard',(name)=>{        
+                if (name == props.cardName) {
+                    isActive.value = true
+                } else {
+                    isActive.value = false
+                }
+            })
+        })
+
+        onUnmounted(()=> {
+            eventbus.off('switchCard')
+        })
+
         return {
-            isActive: false
+            isActive,
+            navigateToArticle,
+            handleMouse
         }
     },
     props: {
@@ -51,31 +87,7 @@ export default {
         CardTitle,
         CardFooter,
         CollapseTransition
-    },
-    methods: {
-        navigateToArticle(where) {
-            this.$router.push({name:where})
-        },
-
-        handleMouse() {
-            this.$eventbus.emit('switchCard', this.cardName)
-        }
-    },
-    beforeMount() {
-        this.isActive = this.isDefaultActive
-    },
-    mounted() {
-        this.$eventbus.on('switchCard',(cardName)=>{
-            if (cardName === this.cardName) {
-                this.isActive = true
-            } else {
-                this.isActive = false
-            }
-        })
-    },
-    beforeDestroy() {
-        this.$eventbus.off('switchCard')
-    },
+    }
 }
 </script>
 

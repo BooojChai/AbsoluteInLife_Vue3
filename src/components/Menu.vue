@@ -20,7 +20,7 @@ import { reactive, markRaw } from 'vue'
 import { useRouter } from 'vue-router'
 
 export default {
-    setup() {
+    setup(props) {
         let router = useRouter()
 
         let items = reactive({
@@ -83,7 +83,7 @@ export default {
 
             items[index].isActive = true
 
-            if (!this.isDemo) {
+            if (!props.isDemo) {
                 router.replace({ name:this.items[index].info.target })
             }
         }

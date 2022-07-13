@@ -6,12 +6,12 @@ import "./assets/iconfont/iconfont.css"
 
 import router from './router'
 import ScrollTo from './plugin/scrollTo'
+import MobileAdapter from './plugin/mobileAdapter'
 
 const app = createApp(App)
 
-app.config.globalProperties.$eventbus = new mitt()
-
 app.use(router)
 app.use(ScrollTo)
+app.use(MobileAdapter)
 
 app.mount('#app')
