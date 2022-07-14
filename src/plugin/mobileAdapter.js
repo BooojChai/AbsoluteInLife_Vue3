@@ -1,26 +1,20 @@
-import eventbus from './eventbus';
+import { ref } from 'vue'
 
-let isMobile = false
+let isMobile = ref(false)
 
 function init() {
     if (document.documentElement.clientWidth < 750) {
-        isMobile = true
-        eventbus.emit('switchToMobile')
+        isMobile.value = true
     } else {
-        isMobile = false
-        eventbus.emit('switchToPC')
+        isMobile.value = false
     }
 }
 
 function checkWidth() {
-    if (document.documentElement.clientWidth < 750 && isMobile == false) {
-        isMobile = true
-        console.log('switchToMobile')
-        eventbus.emit('switchToMobile')
-    } else if (document.documentElement.clientWidth > 750 && isMobile == true) {
-        isMobile = false
-        console.log('switchToPC')
-        eventbus.emit('switchToPC')
+    if (document.documentElement.clientWidth < 750 && isMobile.value == false) {
+        isMobile.value = true
+    } else if (document.documentElement.clientWidth > 750 && isMobile.value == true) {
+        isMobile.value = false
     }
 }
 
@@ -31,5 +25,6 @@ export default {
         window.onresize = function () {
             checkWidth()
         }             
-    }
+    },
+    isMobile
 }

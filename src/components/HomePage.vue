@@ -1,13 +1,19 @@
 <template>
     <div class="homepage">
         <Banner/>
-        <div class="main wrapper">
+        <div class="main wrapper" v-if="!isMobile">
             <Profile/>
             <div class="core-content">
                 <Menu/>
                 <div class="cards">
                     <router-view></router-view>
                 </div>
+            </div>
+        </div>
+        <div class="main-mobile" v-else>
+            <Menu/>
+            <div class="cards">
+                <router-view></router-view>
             </div>
         </div>
         <Footer/>
@@ -19,6 +25,8 @@ import Banner from './Banner.vue'
 import Profile from './Profile.vue'
 import Footer from './Footer.vue'
 import Menu from './Menu.vue'
+import MobileAdapter from '../plugin/mobileAdapter'
+import { ref } from 'vue'
 
 export default {
     components: {
@@ -26,6 +34,13 @@ export default {
         Profile,
         Footer,
         Menu
+    },
+    setup() {
+        let isMobile = ref(MobileAdapter.isMobile)
+
+        return {
+            isMobile
+        }
     }
 }
 </script>
@@ -43,6 +58,13 @@ export default {
             margin-top: 20px;
             padding: 0 10px;
         }
+    }
+}
+
+.main-mobile {
+    .cards {
+        margin-top: 20px;
+        padding: 0 10px;
     }
 }
 </style>

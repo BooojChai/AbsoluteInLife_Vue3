@@ -7,7 +7,7 @@
                 {{items[index].info.text}}
             </div>
             <transition name="word-trans">
-                <div class="word" v-show="items[index].isActive">
+                <div class="word" v-if="!isMobile" v-show="items[index].isActive">
                     {{items[index].info.word}}
                 </div>
             </transition>
@@ -16,12 +16,14 @@
 </template>
 
 <script>
-import { reactive, markRaw } from 'vue'
+import { reactive, markRaw, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import MobileAdapter from '../plugin/mobileAdapter'
 
 export default {
     setup(props) {
         let router = useRouter()
+        let isMobile = ref(MobileAdapter.isMobile)
 
         let items = reactive({
             item1 : {
@@ -90,6 +92,7 @@ export default {
 
         return {
             items,
+            isMobile,
             handleMouseOver
         }
     },

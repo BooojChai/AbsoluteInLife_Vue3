@@ -1,5 +1,5 @@
 <template>
-    <div class="article" @mousewheel="$cancelScroll()">
+    <div class="article" @mousewheel="cancelScroll()">
         <Header :title="'双非一本程序员的大厂之路（二）'" :mark="'扬帆，启航。'" :item="'Professional Career. 03'"/>
         <div class="main wrapper">
             <div class="content" v-pre>
@@ -112,15 +112,28 @@ import Header from '../ArticleHeader.vue'
 import Footer from '../../Footer.vue'
 import CardFooter from '../../Card/CardFooter.vue'
 
+import { onMounted } from 'vue'
+import Scroller from '../../../plugin/scrollTo'
+
 export default {
     components: {
         Header,
         Footer,
         CardFooter
     },
-    mounted() {
-        this.$scrollTo()
-    },
+    setup() {
+        onMounted(()=> {
+            Scroller.scrollTo()
+        })
+
+        function cancelScroll() {
+            Scroller.cancelScroll()
+        }
+
+        return {
+            cancelScroll
+        }
+    }
 }
 </script>
 

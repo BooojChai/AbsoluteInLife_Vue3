@@ -1,5 +1,5 @@
 <template>
-    <div class="article" @mousewheel="$cancelScroll()">
+    <div class="article" @mousewheel="cancelScroll()">
         <Header :title="'用50行代码实现手风琴菜单'" :mark="'H5/CSS/JavaScript/Vue'" :item="'Technology & Science. 01'"/>
         <div class="main wrapper">
             <div class="content">
@@ -67,6 +67,9 @@ import Footer from '../../Footer.vue'
 import CardFooter from '../../Card/CardFooter.vue'
 import Menu from '../../Menu.vue'
 
+import { onMounted } from 'vue'
+import Scroller from '../../../plugin/scrollTo'
+
 export default {
     components: {
         Header,
@@ -74,9 +77,19 @@ export default {
         CardFooter,
         Menu
     },
-    mounted() {
-        this.$scrollTo()
-    },
+    setup() {
+        onMounted(()=> {
+            Scroller.scrollTo()
+        })
+
+        function cancelScroll() {
+            Scroller.cancelScroll()
+        }
+
+        return {
+            cancelScroll
+        }
+    }
 }
 </script>
 
