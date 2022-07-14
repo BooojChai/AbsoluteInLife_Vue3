@@ -184,7 +184,7 @@ export default {
                 flex: 1;
 
                 img {
-                    width: 80%;
+                    width: 83%;
                 }
             }
         }

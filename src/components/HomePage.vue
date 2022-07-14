@@ -26,7 +26,6 @@ import Profile from './Profile.vue'
 import Footer from './Footer.vue'
 import Menu from './Menu.vue'
 import MobileAdapter from '../plugin/mobileAdapter'
-import { ref } from 'vue'
 
 export default {
     components: {
@@ -36,10 +35,8 @@ export default {
         Menu
     },
     setup() {
-        let isMobile = ref(MobileAdapter.isMobile)
-
         return {
-            isMobile
+            isMobile: MobileAdapter.isMobile
         }
     }
 }

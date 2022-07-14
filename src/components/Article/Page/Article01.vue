@@ -94,7 +94,7 @@ export default {
     }
 
     img {
-        width: 60%;
+        width: 100%;
         display: table-cell;
         vertical-align: middle;
         text-align: center;

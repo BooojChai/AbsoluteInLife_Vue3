@@ -106,7 +106,7 @@ export default {
     }
 
     .menu {
-        width: 90%;
+        width: 95%;
         line-height: 1.4;
     }
 

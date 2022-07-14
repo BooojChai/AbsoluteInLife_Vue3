@@ -2,17 +2,17 @@
     <ArticleTemplate :header="headerContent" :footer="footerContent" :bgiPath="bgiPath">
         <div class="content">
             <h2>Cover. <a href="https://y.qq.com/n/ryqq/songDetail/003TEnl83gBNge" target="_blank">山海 - 草东没有派对</a></h2>
-            <video width="640" controls>
+            <video class="video" controls>
                 <source src="./assets/sh.mp4" type="video/mp4">
             </video>
 
             <h2>Cover. <a href="https://y.qq.com/n/ryqq/songDetail/003icnfI1qimEE" target="_blank">Chemical Bus - 逃跑计划</a></h2>
-            <video width="640" controls>
+            <video class="video" controls>
                 <source src="./assets/chemical_bus.mp4" type="video/mp4">
             </video>
 
             <h2>Cover Half. <a href="https://y.qq.com/n/ryqq/songDetail/004A2bMN49hRml" target="_blank">爱情你比我想的阁较伟大 - 茄子蛋</a></h2>
-            <video width="640" controls>
+            <video class="video" controls>
                 <source src="./assets/dwl.mp4" type="video/mp4">
             </video>
 
@@ -40,7 +40,7 @@ export default {
     setup() {
         let data = {
             headerContent: {
-                title: "记录2022元旦微软苏州Office 乐队排练",
+                title: "2022元旦微软苏州Office 乐队排练",
                 mark: "未命名乐队首聚，生涩却有趣",
                 item: "Music, Live & Life. 01",
             },
@@ -83,6 +83,10 @@ export default {
         color: #B7452f;
     }
 
+    .video {
+        width: 100%
+    }
+
     .ending {
         border-top: 1px solid;
         border-image: linear-gradient(to right, rgba(100,100,100,.5), rgba(100,100,100,.1)) 1;
@@ -98,7 +102,7 @@ export default {
         }
 
         img {
-            width: 60%;
+            width: 100%;
             margin: 15px;
         }
     }

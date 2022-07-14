@@ -2,7 +2,11 @@
     <div class="article" @mousewheel="cancelScroll()" 
     :style="{backgroundImage: 'url('+ bgiPath +')'}">
         <Header :title="header.title" :mark="header.mark" :item="header.item"/>
-        <div class="main wrapper">
+        <div class="main wrapper" v-if="!isMobile">
+            <slot/>
+            <CardFooter :content="footer"/>
+        </div>
+        <div class="main-mobile" v-else>
             <slot/>
             <CardFooter :content="footer"/>
         </div>
@@ -17,6 +21,8 @@ import CardFooter from '../Card/CardFooter.vue'
 
 import { onMounted } from 'vue'
 import Scroller from '../../plugin/scrollTo'
+
+import MobileAdapter from '../../plugin/mobileAdapter'
 
 export default {
     components: {
@@ -49,7 +55,8 @@ export default {
         }
 
         return {
-            cancelScroll
+            cancelScroll,
+            isMobile: MobileAdapter.isMobile
         }
     }
 }
@@ -65,6 +72,14 @@ export default {
         border-radius: 10px;
         margin-bottom: 30px;
         padding: 30px 40px 20px 40px;
+    }
+
+    .main-mobile {
+        backdrop-filter: blur(8px);
+        background-color: rgba(24,24,24,.5);
+        border-radius: 10px;
+        margin: 0 15px 30px 15px;
+        padding: 15px 15px 20px 20px;
     }
 }
 </style>
