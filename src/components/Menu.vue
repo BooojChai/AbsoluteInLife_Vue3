@@ -3,7 +3,7 @@
         <div class="menu-item" v-for="(item, index) in items" :key="index" :class="{'active':items[index].isActive}"
         :style="{backgroundImage: 'linear-gradient(to right, rgba(18, 18, 18, 0), rgba(18, 18, 18, 1)), url('+ items[index].info.backgroudImg +')'}"
         @mouseover="handleMouseOver(index)">
-            <div class="text">
+            <div>
                 {{items[index].info.text}}
             </div>
             <transition name="word-trans">
@@ -113,6 +113,7 @@ export default {
         border-radius: 10px;
         overflow: hidden;
         margin: 10px;
+        font-size: 16px;
 
         .menu-item {
             flex: 1;
@@ -138,7 +139,6 @@ export default {
                 position: absolute;
                 bottom: 8px;
                 right: 10px;
-                font-size: 16px;
                 font-weight: 600;
                 font-family: "shouxie";
             }

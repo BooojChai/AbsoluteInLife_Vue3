@@ -108,6 +108,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 15px;
 
     img {
         margin-top: 10px;

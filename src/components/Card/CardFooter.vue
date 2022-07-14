@@ -27,6 +27,7 @@ export default {
         align-items: center;
         justify-content: space-between;
         line-height: 40px;
+        font-size: 16px;
 
         span {
             margin-right: 5px;
