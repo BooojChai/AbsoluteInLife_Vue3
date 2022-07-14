@@ -19,7 +19,7 @@ export default {
 <style lang="less" scoped>
     .card-title {
         color: #AFAFAF;
-        font-size: 30px;
+        font-size: 28px;
 
         span {
             margin-right: 20px;

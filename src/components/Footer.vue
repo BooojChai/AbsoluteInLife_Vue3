@@ -25,6 +25,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    font-size: 15px;
 
     .power span, a {
       color: #f7452f;

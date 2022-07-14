@@ -27,10 +27,11 @@ export default {
         align-items: center;
         justify-content: space-between;
         line-height: 40px;
-        font-size: 16px;
+        font-size: 15px;
 
         span {
             margin-right: 5px;
+            vertical-align: middle;
         }
 
         .right {
