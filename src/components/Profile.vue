@@ -84,12 +84,8 @@ export default {
                     name: "Eureka Moment"
                 },
                 {
-                    url: "https://space.bilibili.com/1526622975",
-                    name: "ReturnTrue - Bilibili"
-                },
-                {
                     url: "https://aka.ms/returntrue",
-                    name: "ReturnTrue - HomePage"
+                    name: "ReturnTrue"
                 }
             ]
         }
