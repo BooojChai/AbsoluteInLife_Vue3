@@ -105,8 +105,8 @@ export default {
 <style lang="less" scoped>
 .profile-mobile {
     margin: 0 10px;
-    padding: 15px;
-    border-radius: 20px;
+    padding: 20px 35px;
+    border-radius: 15px;
     border: #181818 1px solid;
     background-image: url('./Article/Page/assets/beatles.jpg');
     background-size: cover;

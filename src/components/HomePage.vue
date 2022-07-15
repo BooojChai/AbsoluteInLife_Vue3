@@ -16,6 +16,7 @@
             <Menu ref="MenuRef" @menuClick="menuClick"/>
             <div class="cards">
                 <swiper
+                    :autoHeight="true"
                     :initialSlide=1
                     @swiper="onSwiper"
                     @slideChange="onSlideChange"
@@ -45,8 +46,11 @@ import MusicPage from './MusicPage'
 import SharingPage from './SharingPage'
 import MobileAdapter from '../plugin/mobileAdapter'
 
-import { ref } from 'vue'
+import eventbus from '../plugin/eventbus';
+
+import { ref, onMounted } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
+
 import 'swiper/css';
 
 export default {
@@ -84,6 +88,14 @@ export default {
         const menuClick = (index) => {
             useSwiper.slideTo(index)
         }
+
+        onMounted(()=> {
+            eventbus.on('switchCard',()=>{
+                setTimeout(()=> {
+                    useSwiper.updateAutoHeight(500)
+                }, 300)
+            })
+        })
 
         return {
             MenuRef,
