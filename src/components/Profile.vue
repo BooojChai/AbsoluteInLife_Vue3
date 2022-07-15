@@ -6,28 +6,30 @@
 
         <div class="sign">{{ sign }}</div>
 
-        <div class="aboutme title" @click="$router.push('./Article-01')">About Me</div>
+        <div class="core-content">
+            <div class="aboutme title" @click="$router.push('./Article-01')">About Me</div>
 
-        <div class="content">
-            <li v-for="(item, index) in prop" :key="index">{{ prop[index] }}</li>
-        </div>
-
-        <div class="findme title">Find Me Here</div>
-
-        <div class="content">
-            <div v-for="(item, index) in findme" :key="index">
-                <span :class="findme[index].iconClass"></span>
-                <span><a :href="findme[index].url" target="_blank">{{ findme[index].text }}</a></span>
+            <div class="content">
+                <li v-for="(item, index) in prop" :key="index">{{ prop[index] }}</li>
             </div>
-        </div>
 
-        <div class="Friends title">
-            Friends
-        </div>
+            <div class="findme title">Find Me Here</div>
 
-        <div class="content">
-            <span v-for="(item, index) in friends" :key="index"><a :href="friends[index].url"
-                    target="_blank">{{ friends[index].name }}</a></span>
+            <div class="content">
+                <div v-for="(item, index) in findme" :key="index">
+                    <span :class="findme[index].iconClass"></span>
+                    <span><a :href="findme[index].url" target="_blank">{{ findme[index].text }}</a></span>
+                </div>
+            </div>
+
+            <div class="Friends title">
+                Friends
+            </div>
+
+            <div class="content">
+                <span v-for="(item, index) in friends" :key="index"><a :href="friends[index].url"
+                        target="_blank">{{ friends[index].name }}</a></span>
+            </div>
         </div>
     </div>
 </template>
@@ -99,12 +101,12 @@ export default {
 
 <style lang="less" scoped>
 .profile {
-    width: 300px;
     padding-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 15px;
+    margin-bottom: 20px;
 
     img {
         margin-top: 10px;
@@ -123,26 +125,29 @@ export default {
         margin-top: 15px;
         font-size: 20px;
         line-height: 40px;
-        width: 100%;
         border-top: 1px solid;
         border-image: linear-gradient(to right, rgba(66, 66, 66, .9), rgba(66, 66, 66, .1)) 1;
+        padding-left: 10px;
     }
 
     .title:hover {
         color: #B7452f;
-        ;
     }
 
-    .content {
-        width: 100%;
+    .core-content {
+        max-width: 400px;
 
-        span {
-            margin-right: 15px;
+        .content {
+            padding-left: 10px;
+
+            span {
+                margin-right: 15px;
+            }
         }
-    }
 
-    .content a:hover {
-        color: #B7452f;
+        .content a:hover {
+            color: #B7452f;
+        }
     }
 }
 </style>

@@ -39,7 +39,7 @@ export default {
         })
 
         onMounted(()=> {
-            eventbus.on('switchCard',(name)=>{        
+            eventbus.on('switchCard',(name)=>{
                 if (name == props.cardName) {
                     isActive.value = true
                 } else {
@@ -97,13 +97,12 @@ export default {
         padding: 20px 30px 10px 30px;
         border-radius: 10px;
         border: #181818 1px solid;
-        background-size: cover;
         overflow: hidden;
-        margin-bottom: 10px;
+        margin: 0 10px 10px 10px;
 
         img {
             position: absolute;
-            width: 100%;
+            object-fit: contain;
             top: 0;
             left: 0;
             opacity: .4;

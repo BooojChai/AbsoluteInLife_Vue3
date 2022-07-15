@@ -24,12 +24,12 @@ import { useRouter } from 'vue-router'
 import MobileAdapter from '../plugin/mobileAdapter'
 
 export default {
-    setup(props) {
+    setup(props, context) {
         let router = useRouter()
         let isMobile = ref(MobileAdapter.isMobile)
 
         let items = reactive({
-            item1 : {
+            1 : {
                 info : markRaw({
                     name: "career",
                     text: "Professional \n Career",
@@ -40,7 +40,7 @@ export default {
                 }),
                 isActive: true
             },
-            item2 : {
+            2 : {
                 info : markRaw({
                     name: "note",
                     text: "Informal \n Essay",
@@ -51,7 +51,7 @@ export default {
                 }),
                 isActive: false
             },
-            item3 : {
+            3 : {
                 info : markRaw({
                     name: "tech",
                     text: "Technology \n Science",
@@ -62,7 +62,7 @@ export default {
                 }),
                 isActive: false
             },
-            item4 : {
+            4 : {
                 info : markRaw({
                     name: "music",
                     text: "Live & Life, \n Music",
@@ -73,7 +73,7 @@ export default {
                 }),
                 isActive: false
             },
-            item5 : {
+            5 : {
                 info : markRaw({
                     name: "sharing",
                     text: "Sharing \n Love",
@@ -87,20 +87,31 @@ export default {
         })
 
         function handleMouseOver(index) {
+            context.emit("menuClick", index)
+            actMouseOver(index)
+        }
+
+        const clearStatus = () => {
             for (var key in items) {
                 items[key].isActive = false
             }
+        }
+
+        function actMouseOver(index) {
+            clearStatus()
 
             items[index].isActive = true
 
             if (!props.isDemo) {
-                router.replace({ name:this.items[index].info.target })
+                router.replace({ name: items[index].info.target })
             }
         }
 
         return {
             items,
             isMobile,
+            actMouseOver,
+            clearStatus,
             handleMouseOver
         }
     },
@@ -119,7 +130,7 @@ export default {
         border: 2px solid #282828;
         border-radius: 10px;
         overflow: hidden;
-        margin: 10px;
+        margin: 10px 20px 10px 20px;
         font-size: 16px;
 
         .menu-item {

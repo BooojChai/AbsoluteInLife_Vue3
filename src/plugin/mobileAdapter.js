@@ -19,12 +19,12 @@ function checkWidth() {
 }
 
 export default {
-    install(app) {
+    install() {
         init()
 
         window.onresize = function () {
             checkWidth()
-        }             
+        }
     },
     isMobile
 }

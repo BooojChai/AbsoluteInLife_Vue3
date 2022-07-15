@@ -4,7 +4,7 @@
             虽然前方拥堵，但您仍在最优道路上。
         </div>
         <div class="power">
-            Powered By <a href="https://cn.vuejs.org" target="_blank">Vue.js</a> | Theme Refer <span>Archer</span>
+            Powered By <a href="https://v3.cn.vuejs.org" target="_blank">Vue3.js</a> | Theme Refer <span>Archer</span>
         </div>
         <div class="ending">
             欢迎再来：）
@@ -28,7 +28,7 @@ export default {
     font-size: 15px;
 
     .power span, a {
-      color: #f7452f;
+      color: #B7452f;
     }
 
     .ending {
