@@ -59,6 +59,8 @@ export default {
 }
 
 .main-mobile {
+    margin: 0 10px;
+
     .cards {
         margin-top: 20px;
         padding: 0 10px;

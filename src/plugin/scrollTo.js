@@ -5,9 +5,14 @@ export default{
     scrollTo: function(end = 0, cb) {
         if (!isScrolling) {
             isScrolling = true
+
             timer = setInterval(() => {
-                document.documentElement.scrollTop -= (document.documentElement.scrollTop - end) / 16.7
-                if (document.documentElement.scrollTop <= end) {
+                let curTop = document.documentElement.scrollTop || document.body.scrollTop
+                curTop -= (curTop - end) / 16.7
+
+                document.documentElement.scrollTop = document.body.scrollTop = curTop
+
+                if (curTop <= end) {
                     clearInterval(timer)
                     isScrolling = false
                     cb? cb() : null

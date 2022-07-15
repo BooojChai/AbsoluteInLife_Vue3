@@ -3,11 +3,14 @@
         <div class="menu-item" v-for="(item, index) in items" :key="index" :class="{'active':items[index].isActive}"
         :style="{backgroundImage: 'linear-gradient(to right, rgba(18, 18, 18, 0), rgba(18, 18, 18, 1)), url('+ items[index].info.backgroudImg +')'}"
         @mouseover="handleMouseOver(index)">
-            <div>
+            <div class="text">
                 {{items[index].info.text}}
             </div>
             <transition name="word-trans">
-                <div class="word" v-if="!isMobile" v-show="items[index].isActive">
+                <div class="word" v-show="items[index].isActive" v-if="isMobile">
+                    {{items[index].info.wordMobile}}
+                </div>
+                <div class="word" v-show="items[index].isActive" v-else>
                     {{items[index].info.word}}
                 </div>
             </transition>
@@ -31,6 +34,7 @@ export default {
                     name: "career",
                     text: "Professional \n Career",
                     word: "前路依然遥远",
+                    wordMobile: "前路遥远",
                     backgroudImg: require('../assets/career.jpg'),
                     target: "CareerPage",
                 }),
@@ -41,6 +45,7 @@ export default {
                     name: "note",
                     text: "Informal \n Essay",
                     word: "最重要的小事",
+                    wordMobile: "一些小事",
                     backgroudImg: require('../assets/note.jpg'),
                     target: "NotePage",
                 }),
@@ -51,6 +56,7 @@ export default {
                     name: "tech",
                     text: "Technology \n Science",
                     word: "软核技术分享",
+                    wordMobile: "技术分享",
                     backgroudImg: require('../assets/tech.jpg'),
                     target: "TechPage",
                 }),
@@ -61,6 +67,7 @@ export default {
                     name: "music",
                     text: "Live & Life, \n Music",
                     word: "只有音乐才是解药",
+                    wordMobile: "来口音药",
                     backgroudImg: require('../assets/music.jpg'),
                     target: "MusicPage",
                 }),
@@ -71,6 +78,7 @@ export default {
                     name: "sharing",
                     text: "Sharing \n Love",
                     word: "促膝长谈，畅聊一切",
+                    wordMobile: "畅聊一切",
                     backgroudImg: require('../assets/sharing.jpg'),
                     target: "SharingPage",
                 }),
@@ -108,7 +116,6 @@ export default {
 <style lang="less" scoped>
     .menu {
         display: flex;
-        height: 70px;
         border: 2px solid #282828;
         border-radius: 10px;
         overflow: hidden;
@@ -117,7 +124,6 @@ export default {
 
         .menu-item {
             flex: 1;
-            float: left;
             position: relative;
             border-right: 1px solid #181818;
             background-size: cover;
@@ -125,6 +131,10 @@ export default {
             transition: all 1s;
             white-space: pre;
             overflow: hidden;
+
+            .text {
+                font-size: 16px;
+            }
 
             .word-trans-enter-from, .word-trans-leave-to {
                 padding-right: 20px;
@@ -137,7 +147,7 @@ export default {
 
             .word {
                 position: absolute;
-                bottom: 8px;
+                bottom: 9px;
                 right: 10px;
                 font-weight: 600;
                 font-family: "shouxie";

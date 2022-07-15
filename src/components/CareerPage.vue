@@ -13,7 +13,7 @@
             </p>
         </Card>
 
-        <Card :cardName="'Card-02'" :title="{icon:'icon-10kejichuangxin-keji',text:'02. 双非一本程序员的大厂之路（一）'}" :footer="{left:'2022/06/17',right:'#雷霆雨露，皆是礼物'}" :backgroundImage="require('./Article/Page/assets/ABG3.jpg')" :targetArticle="'Article-02'">
+        <Card :cardName="'Card-02'" :title="{icon:'icon-10kejichuangxin-keji',text:'02. 双非一本的大厂之路 - 起'}" :footer="{left:'2022/06/17',right:'#雷霆雨露，皆是礼物'}" :backgroundImage="require('./Article/Page/assets/ABG3.jpg')" :targetArticle="'Article-02'">
             <div class="content" v-pre>
                 <p>2016年，我从苏南某座小城的某所双非一本大学通信工程专业毕业，一晃已工作六年，而微软已经是我呆过的<strong class="red">第四家公司</strong>。按照公司属性给我的前东家和东家们做个分类，他们分别是：<br>
                     <strong>中型民营私企、一线电子厂外企、大型民营私企、世界一流外企。</strong>
@@ -31,18 +31,12 @@
             </div>
         </Card>
 
-        <Card :cardName="'Card-03'" :isDefaultActive="true" :title="{icon:'icon-S_round',text:'03. 双非一本程序员的大厂之路（二）'}" :footer="{left:'2022/06/18',right:'#任意门，通向世界'}" :backgroundImage="require('./Article/Page/assets/ss.png')" :targetArticle="'Article-03'">
+        <Card :cardName="'Card-03'" :isDefaultActive="true" :title="{icon:'icon-S_round',text:'03. 双非一本的大厂之路 - 承'}" :footer="{left:'2022/06/18',right:'#任意门，通向世界'}" :backgroundImage="require('./Article/Page/assets/ss.png')" :targetArticle="'Article-03'">
             <div class="content" v-pre>
-                <p>
-                    三星是典型的<strong class="red">外企风格</strong>：</p>
-                <p> 待遇一般，但具有<strong>性价比</strong>。
-                    不提倡加班，<strong>按小时支付加班费</strong>。
-                    <strong>弹性工作时间</strong>，下午1点之前打卡即可。
-                    工作量不大，<strong>有充足的时间提升自己</strong>。
-                </p>
-                <p>
-                    这里虽然是我的第二家公司，但却是我<strong>真正意义上职业生涯的起点。</strong>
-                </p>
+                <p>2017年的<a href="https://www.samsung.com/cn/" target="_blank"><strong class="red">三星电子</strong></a>，刚刚经历了Note 7 <a href="http://news.imobile.com.cn/articles/2016/1023/172347.shtml" target="_blank"><strong class="red">爆炸事件</strong></a>，在中国市场的销量与口碑每况愈下。但是在全球市场上，其各类终端产品出货量依然<strong>稳居前列</strong>，在消费电子领域持续保持着近乎于<strong class="red">垄断级的地位</strong>。</p>
+
+                <p>在这样的时代背景下，我加入了三星。这里虽然是我的第二家公司，但却是我<strong>真正意义上职业生涯的起点。</strong></p>
+
                 <p>
                     <strong class="red">扬帆，启航。</strong>
                 </p>

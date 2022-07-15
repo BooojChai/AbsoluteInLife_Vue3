@@ -106,8 +106,6 @@ export default {
     }
 
     .menu {
-        width: 95%;
-        line-height: 1.4;
     }
 
     li {

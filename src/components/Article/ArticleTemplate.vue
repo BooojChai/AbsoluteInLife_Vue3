@@ -1,5 +1,5 @@
 <template>
-    <div class="article" @mousewheel="cancelScroll()" 
+    <div class="article" @mousewheel="cancelScroll()" @touchmove="cancelScroll()"
     :style="{backgroundImage: 'url('+ bgiPath +')'}">
         <Header :title="header.title" :mark="header.mark" :item="header.item"/>
         <div class="main wrapper" v-if="!isMobile">
