@@ -1,5 +1,5 @@
 <template>
-    <div class="profile">
+    <div class="profile" :class="{'profile-mobile':isMobile}">
         <img src="../assets/avatar.jpg" alt="">
 
         <div class="name">{{ name }}</div>
@@ -35,6 +35,8 @@
 </template>
 
 <script>
+import MobileAdapter from '../plugin/mobileAdapter'
+
 export default {
     setup() {
         let data = {
@@ -93,15 +95,24 @@ export default {
         }
 
         return {
-            ...(data)
+            ...(data),
+            isMobile: MobileAdapter.isMobile
         }
     }
 }
 </script>
 
 <style lang="less" scoped>
+.profile-mobile {
+    margin: 0 10px;
+    padding: 15px;
+    border-radius: 20px;
+    border: #181818 1px solid;
+    background-image: url('./Article/Page/assets/beatles.jpg');
+    background-size: cover;
+}
+
 .profile {
-    padding-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -136,8 +147,6 @@ export default {
     }
 
     .core-content {
-        max-width: 425px;
-
         .content {
             padding-left: 10px;
             white-space: pre-wrap;

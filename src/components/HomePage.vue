@@ -104,6 +104,7 @@ export default {
 
     .profile-content {
         flex: 1;
+        margin-right: 10px;
     }
 
     .core-content {
