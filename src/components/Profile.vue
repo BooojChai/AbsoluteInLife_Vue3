@@ -78,12 +78,12 @@ export default {
                     name: "强倩Airice"
                 },
                 {
-                    url: "https://space.bilibili.com/23261993/?spm_id_from=333.999.0.0",
-                    name: "强倩Airice - Bilibili"
-                },
-                {
                     url: "http://eureka-moment-fm.com/",
                     name: "Eureka Moment"
+                },
+                {
+                    url: "https://play.google.com/store/apps/details?id=com.eurekaffeine.pokedex",
+                    name: "破壳萌图鉴 - Play Store"
                 },
                 {
                     url: "https://aka.ms/returntrue",
@@ -124,6 +124,7 @@ export default {
     .title {
         margin-top: 15px;
         font-size: 20px;
+        font-weight: 600;
         line-height: 40px;
         border-top: 1px solid;
         border-image: linear-gradient(to right, rgba(66, 66, 66, .9), rgba(66, 66, 66, .1)) 1;
@@ -135,10 +136,11 @@ export default {
     }
 
     .core-content {
-        max-width: 400px;
+        max-width: 425px;
 
         .content {
             padding-left: 10px;
+            white-space: pre-wrap;
 
             span {
                 margin-right: 15px;
