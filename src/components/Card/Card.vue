@@ -1,7 +1,7 @@
 <template>
-    <div class="card" @mouseover="handleMouse">
+    <div class="card" @mouseover="handleMouse" @click="navigateFromCard()">
         <img :src="backgroundImage" alt="">
-        <CardTitle :content="title"  @click="navigateToArticle(targetArticle)"></CardTitle>
+        <CardTitle :content="title"  @click="navigateFromTitle()"></CardTitle>
             <collapse-transition>
                 <div class="content" v-show="isActive">
                     <slot></slot>
@@ -20,30 +20,26 @@ import { ref, onBeforeMount, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import eventbus from '../../plugin/eventbus';
 
+import MobileAdapter from '../../plugin/mobileAdapter'
+
 export default {
     setup(props) {
         let isActive = ref(false)
         let router = useRouter()
-
-        function navigateToArticle(where) {
-            console.log("navigateToArticle " + where)
-            router.push({name:where})
-        }
-
-        function handleMouse() {
-            eventbus.emit('switchCard', props.cardName)
-        }
+        let isMobile = ref(MobileAdapter.isMobile)
 
         onBeforeMount(()=> {
             isActive.value = props.isDefaultActive
         })
 
         onMounted(()=> {
-            eventbus.on('switchCard',(name)=>{
-                if (name == props.cardName) {
-                    isActive.value = true
-                } else {
-                    isActive.value = false
+            eventbus.on('switchCard',(data)=>{
+                if (data.type == props.cardType) {
+                    if (data.name == props.cardName) {
+                        isActive.value = true
+                    } else {
+                        isActive.value = false
+                    }
                 }
             })
         })
@@ -52,16 +48,50 @@ export default {
             eventbus.off('switchCard')
         })
 
+        function handleMouse() {
+            if (!isMobile.value) {
+                eventbus.emit('switchCard', {
+                    name: props.cardName,
+                    type: props.cardType
+                })
+            }
+        }
+
+        function navigateFromTitle() {
+            if (isActive.value) {
+                router.push({name: props.targetArticle})
+            }
+        }
+
+        function navigateFromCard() {
+            if (isMobile.value) {
+                if (isActive.value) {
+                    router.push({name: props.targetArticle})
+                } else {
+                    eventbus.emit('switchCard', {
+                        name: props.cardName,
+                        type: props.cardType
+                    })
+                }
+            }
+        }
+
         return {
             isActive,
-            navigateToArticle,
-            handleMouse
+            navigateFromCard,
+            navigateFromTitle,
+            handleMouse,
+            isMobile
         }
     },
     props: {
         isDefaultActive: {
             type: Boolean,
             default: false
+        },
+        cardType: {
+            type: String,
+            required: true
         },
         cardName: {
             type: String,

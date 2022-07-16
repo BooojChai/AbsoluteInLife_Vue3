@@ -20,11 +20,25 @@
       "unicode_decimal": 58994
     },
     {
+      "icon_id": "765826",
+      "name": "幼儿",
+      "font_class": "shouye",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
       "icon_id": "2076276",
       "name": " 唱歌",
       "font_class": "changge",
       "unicode": "e895",
       "unicode_decimal": 59541
+    },
+    {
+      "icon_id": "2166669",
+      "name": "吉他",
+      "font_class": "jita",
+      "unicode": "e6a4",
+      "unicode_decimal": 59044
     },
     {
       "icon_id": "4198406",
@@ -60,6 +74,20 @@
       "font_class": "10kejichuangxin-keji",
       "unicode": "e629",
       "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "24393226",
+      "name": "思考、疑惑-02",
+      "font_class": "a-sikaoyihuo-02",
+      "unicode": "e7ee",
+      "unicode_decimal": 59374
+    },
+    {
+      "icon_id": "26849736",
+      "name": "微软",
+      "font_class": "Microsoft",
+      "unicode": "e620",
+      "unicode_decimal": 58912
     },
     {
       "icon_id": "27152658",

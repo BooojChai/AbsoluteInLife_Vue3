@@ -1,6 +1,6 @@
 <template>
     <div class="career">
-        <Card :cardName="'Card-01'" :title="{icon:'icon-zhiding',text:'01. 关于这里，关于我'}" :footer="{left:'2022/06/06',right:'#然后呢，一起走吧'}" :backgroundImage="require('./Article/Page/assets/ABG2.jpg')" :targetArticle="'Article-01'">
+        <Card :cardName="'Card-01'" :cardType="'Career'" :title="{icon:'icon-zhiding',text:'01. 关于这里，关于我'}" :footer="{left:'2022/06/06',right:'#然后呢，一起走吧'}" :backgroundImage="require('./Article/Page/assets/ABG2.jpg')" :targetArticle="'Article-01'">
             <p>嗨，你好。</p>
 
             <p>这里是Bojun，一名<strong
@@ -13,7 +13,7 @@
             </p>
         </Card>
 
-        <Card :cardName="'Card-02'" :title="{icon:'icon-10kejichuangxin-keji',text:'02. 双非一本的大厂之路 - 起'}" :footer="{left:'2022/06/17',right:'#雷霆雨露，皆是礼物'}" :backgroundImage="require('./Article/Page/assets/ABG3.jpg')" :targetArticle="'Article-02'">
+        <Card :cardName="'Card-02'" :cardType="'Career'" :title="{icon:'icon-10kejichuangxin-keji',text:'02. 双非一本的大厂之路 - 起'}" :footer="{left:'2022/06/17',right:'#雷霆雨露，皆是礼物'}" :backgroundImage="require('./Article/Page/assets/ABG3.jpg')" :targetArticle="'Article-02'">
             <div class="content" v-pre>
                 <p>2016年，我从苏南某座小城的某所双非一本大学通信工程专业毕业，一晃已工作六年，而微软已经是我呆过的<strong class="red">第四家公司</strong>。按照公司属性给我的前东家和东家们做个分类，他们分别是：<br>
                     <strong>中型民营私企、一线电子厂外企、大型民营私企、世界一流外企。</strong>
@@ -31,7 +31,7 @@
             </div>
         </Card>
 
-        <Card :cardName="'Card-03'" :isDefaultActive="true" :title="{icon:'icon-S_round',text:'03. 双非一本的大厂之路 - 承'}" :footer="{left:'2022/06/18',right:'#任意门，通向世界'}" :backgroundImage="require('./Article/Page/assets/ss.png')" :targetArticle="'Article-03'">
+        <Card :cardName="'Card-03'" :cardType="'Career'" :isDefaultActive="true" :title="{icon:'icon-S_round',text:'03. 双非一本的大厂之路 - 承'}" :footer="{left:'2022/06/18',right:'#任意门，通向世界'}" :backgroundImage="require('./Article/Page/assets/ss.png')" :targetArticle="'Article-03'">
             <div class="content" v-pre>
                 <p>2017年的<a href="https://www.samsung.com/cn/" target="_blank"><strong class="red">三星电子</strong></a>，刚刚经历了Note 7 <a href="http://news.imobile.com.cn/articles/2016/1023/172347.shtml" target="_blank"><strong class="red">爆炸事件</strong></a>，在中国市场的销量与口碑每况愈下。但是在全球市场上，其各类终端产品出货量依然<strong>稳居前列</strong>，在消费电子领域持续保持着近乎于<strong class="red">垄断级的地位</strong>。</p>
 

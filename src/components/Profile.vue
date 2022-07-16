@@ -10,7 +10,10 @@
             <div class="aboutme title" @click="$router.push('./Article-01')">About Me</div>
 
             <div class="content">
-                <li v-for="(item, index) in prop" :key="index">{{ prop[index] }}</li>
+                <div v-for="(item, index) in prop" :key="index">
+                    <span :class="prop[index].iconClass"></span>
+                    <span>{{ prop[index].text }}</span>
+                </div>
             </div>
 
             <div class="findme title">Find Me Here</div>
@@ -42,8 +45,24 @@ export default {
         let data = {
             name: "Bojun Chai",
             sign: "即使缓慢，但步履不停。",
-            prop: ["正在奔三的微软工程师", "业余吉他手/鼓手/贝斯手/唱作人",
-                "最喜欢做的事情是“动脑子”", "一个新生男孩的爸爸"],
+            prop: [
+                {
+                    iconClass: ["iconfont", "icon-Microsoft"],
+                    text: "正在奔三的微软工程师"
+                },
+                {
+                    iconClass: ["iconfont", "icon-jita"],
+                    text: "业余吉他手/鼓手/贝斯手/唱作人"
+                },
+                {
+                    iconClass: ["iconfont", "icon-a-sikaoyihuo-02"],
+                    text: "最喜欢做的事情是“动脑子”"
+                },
+                {
+                    iconClass: ["iconfont", "icon-shouye"],
+                    text: "一枚新生男娃的爸爸"
+                },
+            ],
             findme: [
                 {
                     iconClass: ["iconfont", "icon-changge"],

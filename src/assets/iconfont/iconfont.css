@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1655469211060') format('truetype');
+  src: url('iconfont.ttf?t=1657951783484') format('truetype');
 }
 
 .iconfont {
@@ -19,8 +19,16 @@
   content: "\e672";
 }
 
+.icon-shouye:before {
+  content: "\e63a";
+}
+
 .icon-changge:before {
   content: "\e895";
+}
+
+.icon-jita:before {
+  content: "\e6a4";
 }
 
 .icon-yinle:before {
@@ -41,6 +49,14 @@
 
 .icon-10kejichuangxin-keji:before {
   content: "\e629";
+}
+
+.icon-a-sikaoyihuo-02:before {
+  content: "\e7ee";
+}
+
+.icon-Microsoft:before {
+  content: "\e620";
 }
 
 .icon-FanHui:before {
