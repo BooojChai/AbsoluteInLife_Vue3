@@ -25,7 +25,10 @@
             <div class="my-word" v-show="myWord.show">{{myWord.text}}</div>
         </transition>
         <transition name="my-word-trans">
-            <div class="my-item" v-show="myItem.show">{{myItem.text}}</div>
+            <div class="my-bottom-line" v-show="myItem.show">
+                <div class="my-item">{{myItem.text}}</div>
+                <div class="iconfont icon-shouye" @click="$router.push('./')"></div>
+            </div>
         </transition>
     </div>
 </template>
@@ -89,14 +92,6 @@ export default {
     opacity: .8;
     padding-left: 10px;
 
-    .icon-trans-enter-from {
-        opacity: 0;
-    }
-
-    .icon-trans-enter-active {
-        transition: all 5s;
-    }
-
     .title-trans-enter-from {
         padding-top: 33px;
         opacity: 0;
@@ -105,7 +100,6 @@ export default {
     .title-trans-enter-active {
         transition: all 2s;
     }
-
 
     .icon-FanHui {
         position: fixed;
@@ -154,6 +148,14 @@ export default {
     opacity: .8;
     padding: 40px 10px 15px 20px;
 
+    .icon-trans-enter-from {
+        opacity: 0;
+    }
+
+    .icon-trans-enter-active {
+        transition: all 5s;
+    }
+
     .title-trans-enter-from {
         padding-top: 33px;
         opacity: 0;
@@ -168,18 +170,6 @@ export default {
         text-align: left;
         font-size: 30px;
     }
-    .my-word {
-        font-size: 18px;
-        text-align: left;
-        opacity: .8;
-    }
-
-    .my-item {
-        font-size: 14px;
-        text-align: left;
-        margin-top: 5px;
-        opacity: .65;
-    }
 
     .my-word-trans-enter-active {
         transition: all 3s;
@@ -187,6 +177,30 @@ export default {
 
     .my-word-trans-enter-from {
         opacity: 0;
+    }
+
+    .my-word {
+        font-size: 18px;
+        text-align: left;
+        margin-top: 5px;
+        opacity: .8;
+    }
+
+    .my-bottom-line {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 10px;
+
+        .my-item {
+            font-size: 14px;
+            text-align: left;
+            opacity: .65;
+        }
+
+        .icon-shouye {
+            font-size: 25px;
+        }
     }
 }
 </style>

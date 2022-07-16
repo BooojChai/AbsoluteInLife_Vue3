@@ -99,12 +99,16 @@ export default {
                     name: "强倩Airice"
                 },
                 {
+                    url: "https://space.bilibili.com/23261993",
+                    name: "空米Airice"
+                },
+                {
                     url: "http://eureka-moment-fm.com/",
                     name: "Eureka Moment"
                 },
                 {
                     url: "https://play.google.com/store/apps/details?id=com.eurekaffeine.pokedex",
-                    name: "破壳萌图鉴 - Play Store"
+                    name: "破壳萌图鉴"
                 },
                 {
                     url: "https://aka.ms/returntrue",
@@ -124,10 +128,10 @@ export default {
 <style lang="less" scoped>
 .profile-mobile {
     margin: 0 10px;
-    padding: 20px 35px;
+    padding: 25px 35px;
     border-radius: 15px;
     border: #181818 1px solid;
-    background-image: url('./Article/Page/assets/beatles.jpg');
+    background-image: url('./Article/Page/assets/bts.jpg');
     background-size: cover;
 }
 

@@ -4,10 +4,10 @@
             虽然前方拥堵，但您仍在最优道路上。
         </div>
         <div class="power">
-            Powered By <a href="https://v3.cn.vuejs.org" target="_blank">Vue3.js</a> | Theme Refer <span>Archer</span>
+            Powered By <a href="https://v3.cn.vuejs.org" target="_blank">Vue.js</a> | Design & Dev <a href="https://github.com/BooojChai" target="_blank">Boooj</a>
         </div>
         <div class="ending">
-            欢迎再来：）
+            欢迎常来：）
         </div>
     </div>
 </template>
@@ -20,12 +20,12 @@ export default {
 <style lang="less" scoped>
   .footer {
     width: 100%;
-    height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     font-size: 15px;
+    margin-top: 10px;
 
     .power span, a {
       color: #B7452f;

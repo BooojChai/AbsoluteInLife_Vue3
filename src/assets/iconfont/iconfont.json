@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "7429",
+      "name": "首页",
+      "font_class": "shouye",
+      "unicode": "f029d",
+      "unicode_decimal": 983709
+    },
+    {
       "icon_id": "431779",
       "name": "github",
       "font_class": "github",
@@ -22,7 +29,7 @@
     {
       "icon_id": "765826",
       "name": "幼儿",
-      "font_class": "shouye",
+      "font_class": "shouye1",
       "unicode": "e63a",
       "unicode_decimal": 58938
     },

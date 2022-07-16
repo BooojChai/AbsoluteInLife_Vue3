@@ -49,8 +49,10 @@ import eventbus from '../plugin/eventbus';
 
 import { ref, onMounted } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
-
 import 'swiper/css';
+
+/* Only for mobile */
+let targetIndex = 0
 
 export default {
     components: {
@@ -67,10 +69,24 @@ export default {
         Swiper,
         SwiperSlide
     },
+    beforeRouteEnter(to, from, next) {
+        if (MobileAdapter.isMobile) {
+            let routerMap = ['/','/career','/note','/tech','/music','/sharing']
+            routerMap.forEach(function(value, index) {
+                    if (to.path === value) {
+                        targetIndex = index
+                    }
+                }
+            )
+        }
+
+        next()
+	},
     setup() {
         const MenuRef = ref(null)
 
         let useSwiper
+        let isMobile = ref(MobileAdapter.isMobile)
 
         const onSwiper = (swiper) => {
             useSwiper = swiper
@@ -94,6 +110,10 @@ export default {
                     useSwiper.updateAutoHeight(500)
                 }, 300)
             })
+
+            if (isMobile.value) {
+                menuClick(targetIndex)
+            }
         })
 
         return {
@@ -101,7 +121,7 @@ export default {
             menuClick,
             onSwiper,
             onSlideChange,
-            isMobile: MobileAdapter.isMobile
+            isMobile
         }
     }
 }
