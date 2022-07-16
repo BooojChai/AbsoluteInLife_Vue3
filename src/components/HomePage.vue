@@ -103,15 +103,16 @@ export default {
         }
 
         onMounted(()=> {
-            eventbus.on('switchCard',()=>{
-                setTimeout(()=> {
-                    useSwiper.updateAutoHeight(500)
-                }, 300)
-            })
-
             if (isMobile.value) {
+                eventbus.on('switchCard',()=>{
+                    setTimeout(()=> {
+                        useSwiper.updateAutoHeight(500)
+                    }, 300)
+                })
+
                 menuClick(targetIndex)
             } else {
+                targetIndex = targetIndex == 0 ? 1 : targetIndex
                 MenuRef.value.actMouseOver(targetIndex)
             }
         })

@@ -45,17 +45,16 @@ export default {
 <style lang="less" scoped>
     .banner {
         position: relative;
-        width: 100%;
-        height: 260px;
+        height: 240px;
         background-image: linear-gradient(to top, #121212, rgba(18, 18, 18, 0)), url(../assets/xj2.jpg);
+        background-position: center;
         background-size: cover;
-        background-position: 0 -260px;
         color: #DFDFDF;
         opacity: .8;
 
         .title {
             font-family: "Oswald-Regular";
-            padding-top: 48px;
+            padding-top: 40px;
             text-align: center;
             font-size: 70px;
         }

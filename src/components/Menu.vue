@@ -38,7 +38,7 @@ export default {
                     backgroudImg: require('../assets/career.jpg'),
                     target: "CareerPage",
                 }),
-                isActive: isMobile.value ? false : true
+                isActive: false
             },
             2 : {
                 info : markRaw({
