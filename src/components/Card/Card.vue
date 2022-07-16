@@ -1,6 +1,8 @@
 <template>
     <div class="card" @mouseover="handleMouse" @click="navigateFromCard()">
-        <img :src="backgroundImage" alt="">
+        <div class="bg">
+            <img :src="backgroundImage" alt="">
+        </div>
         <CardTitle :content="title"  @click="navigateFromTitle()"></CardTitle>
             <collapse-transition>
                 <div class="content" v-show="isActive">
@@ -130,13 +132,15 @@ export default {
         overflow: hidden;
         margin: 0 10px 10px 10px;
 
-        img {
-            position: absolute;
-            object-fit: contain;
-            top: 0;
-            left: 0;
-            opacity: .4;
-            z-index: -1;
+        .bg {
+            img {
+                position: absolute;
+                object-fit: contain;
+                top: 0;
+                left: 0;
+                opacity: .4;
+                z-index: -1;
+            }
         }
 
         .content {

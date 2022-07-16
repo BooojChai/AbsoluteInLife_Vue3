@@ -17,7 +17,6 @@
             <div class="cards">
                 <swiper
                     :autoHeight="true"
-                    :initialSlide=1
                     @swiper="onSwiper"
                     @slideChange="onSlideChange"
                 >
