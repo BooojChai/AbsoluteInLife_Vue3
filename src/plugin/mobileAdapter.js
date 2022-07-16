@@ -1,9 +1,10 @@
 import { ref } from 'vue'
 
 let isMobile = ref(false)
+let mobileSize = 820
 
 function init() {
-    if (document.documentElement.clientWidth < 750) {
+    if (document.documentElement.clientWidth <= mobileSize) {
         isMobile.value = true
     } else {
         isMobile.value = false
@@ -11,9 +12,9 @@ function init() {
 }
 
 function checkWidth() {
-    if (document.documentElement.clientWidth < 750 && isMobile.value == false) {
+    if (document.documentElement.clientWidth <= mobileSize && isMobile.value == false) {
         isMobile.value = true
-    } else if (document.documentElement.clientWidth > 750 && isMobile.value == true) {
+    } else if (document.documentElement.clientWidth >= mobileSize && isMobile.value == true) {
         isMobile.value = false
     }
 }

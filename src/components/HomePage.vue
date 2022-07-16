@@ -6,7 +6,7 @@
                 <Profile/>
             </div>
             <div class="core-content">
-                <Menu/>
+                <Menu ref="MenuRef"/>
                 <div class="cards">
                     <router-view></router-view>
                 </div>
@@ -70,15 +70,13 @@ export default {
         SwiperSlide
     },
     beforeRouteEnter(to, from, next) {
-        if (MobileAdapter.isMobile) {
-            let routerMap = ['/','/career','/note','/tech','/music','/sharing']
-            routerMap.forEach(function(value, index) {
-                    if (to.path === value) {
-                        targetIndex = index
-                    }
+        let routerMap = ['/','/career','/note','/tech','/music','/sharing']
+        routerMap.forEach(function(value, index) {
+                if (to.path === value) {
+                    targetIndex = index
                 }
-            )
-        }
+            }
+        )
 
         next()
 	},
@@ -113,6 +111,8 @@ export default {
 
             if (isMobile.value) {
                 menuClick(targetIndex)
+            } else {
+                MenuRef.value.actMouseOver(targetIndex)
             }
         })
 
