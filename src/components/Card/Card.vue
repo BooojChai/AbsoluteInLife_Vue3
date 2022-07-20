@@ -1,7 +1,7 @@
 <template>
     <div class="card" @mouseover="handleMouse" @click="navigateFromCard()">
         <div class="bg">
-            <img :src="backgroundImage" alt="">
+            <img :src="backgroundImage" :class="{'img-active':isActive}">
         </div>
         <CardTitle :content="title"  @click="navigateFromTitle()"></CardTitle>
             <collapse-transition>
@@ -138,8 +138,14 @@ export default {
                 object-fit: contain;
                 top: 0;
                 left: 0;
-                opacity: .4;
+                opacity: .2;
                 z-index: -1;
+                transition: all 2s;
+            }
+
+            .img-active {
+                opacity: .7;
+                transform: scaleX(1.1) scaleY(1.1);
             }
         }
 

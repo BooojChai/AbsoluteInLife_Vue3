@@ -59,7 +59,7 @@ export default {
                     text: "最喜欢做的事情是“动脑子”"
                 },
                 {
-                    iconClass: ["iconfont", "icon-shouye"],
+                    iconClass: ["iconfont", "icon-shouye1"],
                     text: "一枚新生男娃的爸爸"
                 },
             ],
@@ -163,6 +163,10 @@ export default {
         border-top: 1px solid;
         border-image: linear-gradient(to right, rgba(66, 66, 66, .9), rgba(66, 66, 66, .1)) 1;
         padding-left: 10px;
+    }
+
+    .icon-shouye1 {
+        font-size: 19px;
     }
 
     .title:hover {

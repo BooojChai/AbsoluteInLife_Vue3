@@ -1,6 +1,6 @@
 <template>
     <ArticleTemplate :header="headerContent" :footer="footerContent" :bgiPath="bgiPath">
-        <div class="content" v-pre>
+        <div class="content">
             <h1>承.  Samsung</h1>
 
             <h2>加入它</h2>
@@ -82,6 +82,8 @@
                 谢谢你在煦日和风中送别我。<br>
                 你好，再见！
             </strong></p>
+
+            <div class="tonext" @click="$router.push({name:'Article-04'})"><strong>下集： 双非一本程序员的大厂之路（三）</strong></div>
 
             <p><strong> - 未完待续 - </strong></p>
 
@@ -196,6 +198,11 @@ export default {
 
     li:hover a {
         color: #B7452f;
+    }
+
+    .tonext {
+        margin-top: 20px;
+        cursor: pointer;
     }
 }
 </style>

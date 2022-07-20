@@ -1,0 +1,16 @@
+{
+  "id": "3535040",
+  "name": "AIL",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "13743975",
+      "name": "oppo-fill-round",
+      "font_class": "oppo-fill-round",
+      "unicode": "e68c",
+      "unicode_decimal": 59020
+    }
+  ]
+}

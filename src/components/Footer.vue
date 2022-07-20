@@ -26,6 +26,7 @@ export default {
     text-align: center;
     font-size: 15px;
     margin-top: 10px;
+    padding-bottom: 20px;
 
     .power span, a {
       color: #B7452f;

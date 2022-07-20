@@ -11,6 +11,7 @@ import SharingPage from '../components/SharingPage'
 import Article01 from '../components/Article/Page/Article01'
 import Article02 from '../components/Article/Page/Article02'
 import Article03 from '../components/Article/Page/Article03'
+import Article04 from '../components/Article/Page/Article04'
 
 /* Music Article */
 import MusicArticle01 from '../components/Article/Page/MusicArticle01'
@@ -68,6 +69,11 @@ const routes = [
 		name: 'Article-03',
 		path:'/Article-03',
 		component: Article03
+	},
+	{
+		name: 'Article-04',
+		path:'/Article-04',
+		component: Article04
 	},
 	{
 		name: 'MusicArticle-01',
