@@ -19,6 +19,9 @@ import MusicArticle01 from '../components/Article/Page/MusicArticle01'
 /* Tech Article */
 import TechArticle01 from '../components/Article/Page/TechArticle01'
 
+/* Love Article */
+import LoveArticle01 from '../components/Article/Page/LoveArticle01'
+
 const routes = [
 	{
 		path:'/',
@@ -84,6 +87,11 @@ const routes = [
 		name: 'TechArticle-01',
 		path:'/TechArticle-01',
 		component: TechArticle01
+	},
+	{
+		name: 'LoveArticle-01',
+		path:'/LoveArticle-01',
+		component: LoveArticle01
 	}
 ]
 

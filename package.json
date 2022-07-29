@@ -19,7 +19,9 @@
     "tslint-loader": "^3.5.4",
     "typescript": "^4.7.4",
     "vue": "^3.2.13",
-    "vue-router": "4"
+    "vue-router": "4",
+    "vue-waterfall-easy": "^2.4.4",
+    "vue-waterfall-plugin-next": "^2.1.7"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

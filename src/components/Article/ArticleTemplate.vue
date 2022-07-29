@@ -67,9 +67,9 @@ export default {
     background-size: contain;
 
     .main {
-        backdrop-filter: blur(8px);
-        background-color: rgba(24,24,24,.5);
-        border-radius: 10px;
+        // backdrop-filter: blur(8px);
+        // background-color: rgba(24,24,24,.5);
+        // border-radius: 10px;
         margin-bottom: 30px;
         padding: 30px 40px 20px 40px;
     }
