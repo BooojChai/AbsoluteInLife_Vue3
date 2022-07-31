@@ -1,5 +1,5 @@
 <template>
-    <ArticleTemplate :header="headerContent" :footer="footerContent" :bgiPath="bgiPath">
+    <ArticleTemplate :header="headerContent" :footer="footerContent" :bgiPath="bgiPath" :isNoArticleBg="true">
         <div class="content">
             <Waterfall :list="imgArray" :gutter="5" :breakpoints="breakpoints">
                 <template #item="{ url }">
@@ -115,7 +115,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .waterfall-list {
     background: none !important;
     padding: 0 !important;
@@ -125,17 +125,5 @@ export default {
         backdrop-filter: blur(4px) !important;
         background-color: rgba(28,28,28,.5) !important;
     }
-}
-
-.main {
-    padding: 0 !important;
-    backdrop-filter: none !important;
-    background-color: rgba(0,0,0,0) !important;
-}
-
-.main-mobile {
-    padding: 0 !important;
-    backdrop-filter: none !important;
-    background-color: rgba(0,0,0,0) !important;
 }
 </style>

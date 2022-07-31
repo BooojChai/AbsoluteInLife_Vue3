@@ -2,11 +2,11 @@
     <div class="article" @mousewheel="cancelScroll()" @touchmove="cancelScroll()"
     :style="{backgroundImage: 'url('+ bgiPath +')'}">
         <Header :title="header.title" :mark="header.mark" :item="header.item"/>
-        <div class="main wrapper" v-if="!isMobile">
+        <div class="main wrapper" v-if="!isMobile" :class="{'no-article-bg' : isNoArticleBg}">
             <slot/>
             <CardFooter :content="footer"/>
         </div>
-        <div class="main-mobile" v-else>
+        <div class="main-mobile" v-else :class="{'no-article-bg' : isNoArticleBg}">
             <slot/>
             <CardFooter :content="footer"/>
         </div>
@@ -43,6 +43,10 @@ export default {
         bgiPath: {
             type: String,
             require: true
+        },
+        isNoArticleBg: {
+            type: Boolean,
+            default: false
         }
     },
     setup() {
@@ -80,6 +84,12 @@ export default {
         border-radius: 10px;
         margin: 0 15px 30px 15px;
         padding: 15px 15px 20px 20px;
+    }
+
+    .no-article-bg {
+        padding: 0 !important;
+        backdrop-filter: none !important;
+        background-color: rgba(0,0,0,0) !important;
     }
 }
 </style>
