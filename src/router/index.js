@@ -21,6 +21,7 @@ import TechArticle01 from '../components/Article/Page/TechArticle01'
 
 /* Love Article */
 import LoveArticle01 from '../components/Article/Page/LoveArticle01'
+import LoveArticle02 from '../components/Article/Page/LoveArticle02'
 
 const routes = [
 	{
@@ -92,7 +93,12 @@ const routes = [
 		name: 'LoveArticle-01',
 		path:'/LoveArticle-01',
 		component: LoveArticle01
-	}
+	},
+	{
+		name: 'LoveArticle-02',
+		path:'/LoveArticle-02',
+		component: LoveArticle02
+	},
 ]
 
 export default createRouter({

@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "9748081",
+      "name": "前端开发",
+      "font_class": "qianduankaifa",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "5618764",
+      "name": "乐队",
+      "font_class": "ledui",
+      "unicode": "e66b",
+      "unicode_decimal": 58987
+    },
+    {
+      "icon_id": "4964666",
+      "name": "火锅",
+      "font_class": "huoguo",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "3775169",
+      "name": "海星",
+      "font_class": "haixing",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
       "icon_id": "13743975",
       "name": "oppo-fill-round",
       "font_class": "oppo-fill-round",

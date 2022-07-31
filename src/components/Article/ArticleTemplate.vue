@@ -71,16 +71,16 @@ export default {
     background-size: contain;
 
     .main {
-        // backdrop-filter: blur(8px);
-        // background-color: rgba(24,24,24,.5);
-        // border-radius: 10px;
+        backdrop-filter: blur(8px);
+        background-color: rgba(24,24,24,.4);
+        border-radius: 10px;
         margin-bottom: 30px;
         padding: 30px 40px 20px 40px;
     }
 
     .main-mobile {
         backdrop-filter: blur(8px);
-        background-color: rgba(24,24,24,.5);
+        background-color: rgba(24,24,24,.4);
         border-radius: 10px;
         margin: 0 15px 30px 15px;
         padding: 15px 15px 20px 20px;
