@@ -1,8 +1,10 @@
-var isScrolling = false
-var timer
+import { defineComponent } from 'vue'
 
-export default{
-    scrollTo: function(end = 0, cb) {
+let isScrolling = false
+let timer: number
+
+export default defineComponent({
+    scrollTo: function(end = 0) {
         if (!isScrolling) {
             isScrolling = true
 
@@ -15,7 +17,6 @@ export default{
                 if (curTop <= end) {
                     clearInterval(timer)
                     isScrolling = false
-                    cb? cb() : null
                 }
             }, 16.7);
         }
@@ -27,4 +28,4 @@ export default{
             isScrolling = false
         }
     }
-}
+})

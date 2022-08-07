@@ -33,28 +33,28 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import Banner from './Banner.vue'
 import Profile from './Profile.vue'
 import Footer from './Footer.vue'
-import Menu from './Menu'
-import CareerPage from './CareerPage'
-import NotePage from './NotePage'
-import TechPage from './TechPage'
-import MusicPage from './MusicPage'
-import SharingPage from './SharingPage'
+import Menu from './Menu.vue'
+import CareerPage from './CareerPage.vue'
+import NotePage from './NotePage.vue'
+import TechPage from './TechPage.vue'
+import MusicPage from './MusicPage.vue'
+import SharingPage from './SharingPage.vue'
 import MobileAdapter from '../plugin/mobileAdapter'
 
 import eventbus from '../plugin/eventbus';
 
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, defineComponent } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css';
 
 /* Only for mobile */
 let targetIndex = 0
 
-export default {
+export default defineComponent({
     components: {
         Banner,
         Profile,
@@ -69,7 +69,7 @@ export default {
         Swiper,
         SwiperSlide
     },
-    beforeRouteEnter(to, from, next) {
+    beforeRouteEnter(to: any, from: any, next: any) {
         let routerMap = ['/','/career','/note','/tech','/music','/sharing']
         routerMap.forEach(function(value, index) {
                 if (to.path === value) {
@@ -81,16 +81,16 @@ export default {
         next()
 	},
     setup() {
-        const MenuRef = ref(null)
+        const MenuRef = ref()
 
-        let useSwiper
+        let useSwiper: any
         let isMobile = ref(MobileAdapter.isMobile)
 
-        const onSwiper = (swiper) => {
+        const onSwiper = (swiper: any) => {
             useSwiper = swiper
         };
 
-        const onSlideChange = (swiper) => {
+        const onSlideChange = (swiper: any) => {
             if (swiper.activeIndex == 0) {
                 MenuRef.value.clearStatus()
             } else {
@@ -98,7 +98,7 @@ export default {
             }
         }
 
-        const menuClick = (index) => {
+        const menuClick = (index: number) => {
             useSwiper.slideTo(index)
         }
 
@@ -125,7 +125,7 @@ export default {
             isMobile
         }
     }
-}
+})
 </script>
 
 <style lang="less" scoped>

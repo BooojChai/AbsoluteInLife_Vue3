@@ -9,7 +9,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import { onMounted, reactive, toRefs } from 'vue';
 
 export default {

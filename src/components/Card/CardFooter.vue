@@ -9,12 +9,15 @@
 </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
     props: {
         content: {
-            left: "This is footer left",
-            right: 'This is footer right'
+            type: Object,
+            default: {
+                left: "This is footer left",
+                right: 'This is footer right'
+            }
         },
     }
 }

@@ -14,17 +14,17 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import Header from './ArticleHeader.vue'
 import Footer from '../Footer.vue'
 import CardFooter from '../Card/CardFooter.vue'
 
-import { onMounted } from 'vue'
+import { onMounted, defineComponent } from 'vue'
 import Scroller from '../../plugin/scrollTo'
 
 import MobileAdapter from '../../plugin/mobileAdapter'
 
-export default {
+export default defineComponent({
     components: {
         Header,
         Footer,
@@ -32,13 +32,19 @@ export default {
     },
     props: {
         header: {
-            title: "Article Title",
-            mark: "Article Mark",
-            item: "Article Item",
+            type: Object,
+            default: {
+                title: "Article Title",
+                mark: "Article Mark",
+                item: "Article Item",
+            }
         },
         footer: {
-            left: "Footer Left",
-            right: "Footer right",
+            type: Object,
+            default: {
+                left: "Footer Left",
+                right: "Footer right",
+            }
         },
         bgiPath: {
             type: String,
@@ -63,7 +69,7 @@ export default {
             isMobile: MobileAdapter.isMobile
         }
     }
-}
+})
 </script>
 
 <style lang="less" scoped>

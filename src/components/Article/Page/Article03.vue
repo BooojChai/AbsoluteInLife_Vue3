@@ -105,7 +105,7 @@
 </template>
 
 
-<script>
+<script lang="ts">
 import ArticleTemplate from '../ArticleTemplate.vue'
 
 export default {

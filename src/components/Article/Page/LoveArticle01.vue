@@ -12,7 +12,7 @@
     </ArticleTemplate>
 </template>
 
-<script>
+<script lang="ts">
 import ArticleTemplate from '../ArticleTemplate.vue'
 
 import { LazyImg, Waterfall } from 'vue-waterfall-plugin-next'

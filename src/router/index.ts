@@ -1,27 +1,27 @@
 import { createRouter,createWebHashHistory } from "vue-router";
 
-import HomePage from '../components/HomePage'
-import CareerPage from '../components/CareerPage'
-import NotePage from '../components/NotePage'
-import TechPage from '../components/TechPage'
-import MusicPage from '../components/MusicPage'
-import SharingPage from '../components/SharingPage'
+import HomePage from '../components/HomePage.vue'
+import CareerPage from '../components/CareerPage.vue'
+import NotePage from '../components/NotePage.vue'
+import TechPage from '../components/TechPage.vue'
+import MusicPage from '../components/MusicPage.vue'
+import SharingPage from '../components/SharingPage.vue'
 
 /* Career Articles */
-import Article01 from '../components/Article/Page/Article01'
-import Article02 from '../components/Article/Page/Article02'
-import Article03 from '../components/Article/Page/Article03'
-import Article04 from '../components/Article/Page/Article04'
+import Article01 from '../components/Article/Page/Article01.vue'
+import Article02 from '../components/Article/Page/Article02.vue'
+import Article03 from '../components/Article/Page/Article03.vue'
+import Article04 from '../components/Article/Page/Article04.vue'
 
 /* Music Article */
-import MusicArticle01 from '../components/Article/Page/MusicArticle01'
+import MusicArticle01 from '../components/Article/Page/MusicArticle01.vue'
 
 /* Tech Article */
-import TechArticle01 from '../components/Article/Page/TechArticle01'
+import TechArticle01 from '../components/Article/Page/TechArticle01.vue'
 
 /* Love Article */
-import LoveArticle01 from '../components/Article/Page/LoveArticle01'
-import LoveArticle02 from '../components/Article/Page/LoveArticle02'
+import LoveArticle01 from '../components/Article/Page/LoveArticle01.vue'
+import LoveArticle02 from '../components/Article/Page/LoveArticle02.vue'
 
 const routes = [
 	{

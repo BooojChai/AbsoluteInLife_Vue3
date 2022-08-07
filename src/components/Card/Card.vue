@@ -13,18 +13,18 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import CardTitle from "./CardTitle.vue"
 import CardFooter from "./CardFooter.vue"
 import CollapseTransition from "../collapse-transition"
 
-import { ref, onBeforeMount, onMounted, onUnmounted } from 'vue'
+import { ref, onBeforeMount, onMounted, onUnmounted, defineComponent } from 'vue'
 import { useRouter } from 'vue-router'
 import eventbus from '../../plugin/eventbus';
 
 import MobileAdapter from '../../plugin/mobileAdapter'
 
-export default {
+export default defineComponent({
     setup(props) {
         let isActive = ref(false)
         let router = useRouter()
@@ -35,7 +35,7 @@ export default {
         })
 
         onMounted(()=> {
-            eventbus.on('switchCard',(data)=>{
+            eventbus.on('switchCard',(data: any)=>{
                 if (data.type == props.cardType) {
                     if (data.name == props.cardName) {
                         isActive.value = true
@@ -104,12 +104,18 @@ export default {
             default: "/"
         },
         title: {
-            icon: "icon-zhiding",
-            text:  "It's title text"
+            type: Object,
+            default : {
+                icon: "icon-zhiding",
+                text:  "It's title text"
+            }
         },
         footer: {
-            left: "This is footer left",
-            right: 'This is footer right'
+            type: Object,
+            default : {
+                left: "This is footer left",
+                right: 'This is footer right'
+            }
         },
         backgroundImage: {
             type: String
@@ -120,7 +126,7 @@ export default {
         CardFooter,
         CollapseTransition
     }
-}
+})
 </script>
 
 <style lang="less">

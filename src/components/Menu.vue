@@ -18,12 +18,12 @@
     </div>
 </template>
 
-<script>
-import { reactive, markRaw, ref } from 'vue'
+<script lang="ts">
+import { reactive, markRaw, ref, defineComponent } from 'vue'
 import { useRouter } from 'vue-router'
 import MobileAdapter from '../plugin/mobileAdapter'
 
-export default {
+export default defineComponent({
     setup(props, context) {
         let router = useRouter()
         let isMobile = ref(MobileAdapter.isMobile)
@@ -86,7 +86,7 @@ export default {
             },
         })
 
-        function handleMouseOver(index) {
+        function handleMouseOver(index: number) {
             context.emit("menuClick", index)
             actMouseOver(index)
         }
@@ -97,7 +97,7 @@ export default {
             }
         }
 
-        function actMouseOver(index) {
+        function actMouseOver(index: number) {
             clearStatus()
 
             items[index].isActive = true
@@ -121,7 +121,7 @@ export default {
             default: false
         }
     }
-}
+})
 </script>
 
 <style lang="less" scoped>

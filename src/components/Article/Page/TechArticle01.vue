@@ -56,7 +56,7 @@
     </ArticleTemplate>
 </template>
 
-<script>
+<script lang="ts">
 import Menu from '../../Menu.vue'
 import ArticleTemplate from '../ArticleTemplate.vue'
 

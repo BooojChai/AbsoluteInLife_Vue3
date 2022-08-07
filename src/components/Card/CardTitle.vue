@@ -5,12 +5,15 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
     props: {
         content: {
-            icon:  "icon-zhiding",
-            text: "It's title text"
+            type: Object,
+            default: {
+                icon:  "icon-zhiding",
+                text: "It's title text"
+            }
         }
     }
 }

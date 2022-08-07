@@ -33,11 +33,11 @@
     </div>
 </template>
 
-<script>
-import { onMounted, reactive } from 'vue'
+<script lang="ts">
+import { onMounted, reactive, defineComponent } from 'vue'
 import MobileAdapter from '../../plugin/mobileAdapter'
 
-export default {
+export default defineComponent({
     props: {
         title: {
             type: String,
@@ -82,7 +82,7 @@ export default {
             isMobile: MobileAdapter.isMobile
         }
     }
-}
+})
 </script>
 
 <style lang="less" scoped>

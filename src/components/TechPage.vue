@@ -16,7 +16,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 /* Cards */
 import Card from './Card/Card.vue'
 

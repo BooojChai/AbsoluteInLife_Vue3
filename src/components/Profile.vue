@@ -37,7 +37,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import MobileAdapter from '../plugin/mobileAdapter'
 
 export default {

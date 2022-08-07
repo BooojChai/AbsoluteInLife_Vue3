@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 
 let isMobile = ref(false)
-let mobileSize = 820
+let mobileSize: number = 820
 
 function init() {
     if (document.documentElement.clientWidth <= mobileSize) {
