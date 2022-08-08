@@ -4,6 +4,7 @@ module.exports = defineConfig({
   transpileDependencies: true,
   lintOnSave: false,
   publicPath:'./',
+  parallel: false,
   configureWebpack: {
     module: {
       rules: [

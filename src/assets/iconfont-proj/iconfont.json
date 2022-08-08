@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "24164620",
+      "name": "微软",
+      "font_class": "weiruan",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "26849736",
+      "name": "微软",
+      "font_class": "Microsoft",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
       "icon_id": "9748081",
       "name": "前端开发",
       "font_class": "qianduankaifa",
